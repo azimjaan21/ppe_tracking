@@ -84,9 +84,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🤝 Contributing
 We welcome contributions from the community 🌍. To contribute, please follow these steps:
 
-Fork the repository 🍴
-Create a new branch for your feature or bug fix 🧑‍💻
-Submit a pull request with a clear description of your changes 📝
+
 
 -----
 
