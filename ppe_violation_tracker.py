@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import torch
 from ultralytics import YOLO
 from collections import defaultdict, deque
 from typing import Dict, List, Tuple
@@ -245,9 +246,14 @@ class PPEViolationTracker:
                 
             return frame, violation_status
     
-##video running process webcam
+    ##video running process webcam
+    import cv2
+    import torch
+    import time
+    from typing import Tuple, Dict
+
     def run_on_video(self, source: str, output_path: str = None):
-        """Run PPE violation detection on video source"""
+        """Run PPE violation detection on video source with FPS counter and device info"""
         try:
             if isinstance(source, str) and source.isdigit():
                 source = int(source)
@@ -268,11 +274,31 @@ class PPEViolationTracker:
             cv2.namedWindow('PPE Violation Detection', cv2.WND_PROP_FULLSCREEN)
             cv2.setWindowProperty('PPE Violation Detection', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
             
+            # Get device information
+            device = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU"
+            
+            # Initialize FPS calculation variables
+            prev_time = time.time()
+            fps_counter = 0
+            fps_display = 0
+            fps_update_interval = 0.5  # Update FPS every 0.5 seconds
+            
             while True:
                 ret, frame = cap.read()
                 if not ret:
                     break
                     
+                # Calculate FPS
+                fps_counter += 1
+                current_time = time.time()
+                elapsed_time = current_time - prev_time
+                
+                # Update FPS display every update_interval seconds
+                if elapsed_time > fps_update_interval:
+                    fps_display = round(fps_counter / elapsed_time, 1)
+                    fps_counter = 7
+                    prev_time = current_time
+                
                 processed_frame, violation_status = self.process_frame(frame)
                 
                 # Print violation alerts
@@ -280,6 +306,38 @@ class PPEViolationTracker:
                     if is_violating:
                         duration = self.violation_tracks[worker_id]['duration']
                         print(f"ALERT: Worker {worker_id} has no helmet for {duration:.1f} seconds!")
+                
+                # Add FPS and device info to frame
+                frame_h, frame_w = processed_frame.shape[:2]
+                fps_text = f"FPS: {fps_display}"
+                device_text = f"Device: {device}"
+                
+                # Get text sizes for positioning
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                font_scale = 0.7
+                thickness = 2
+                fps_size = cv2.getTextSize(fps_text, font, font_scale, thickness)[0]
+                device_size = cv2.getTextSize(device_text, font, font_scale, thickness)[0]
+                
+                # Calculate positions (bottom-right corner with padding)
+                padding = 10
+                fps_pos = (frame_w - fps_size[0] - padding, frame_h - fps_size[1] - padding - device_size[1] - 5)
+                device_pos = (frame_w - device_size[0] - padding, frame_h - padding)
+                
+                # Draw background rectangles
+                bg_padding = 5
+                cv2.rectangle(processed_frame, 
+                            (fps_pos[0] - bg_padding, fps_pos[1] - fps_size[1] - bg_padding),
+                            (fps_pos[0] + fps_size[0] + bg_padding, fps_pos[1] + bg_padding),
+                            (0, 0, 0), -1)
+                cv2.rectangle(processed_frame,
+                            (device_pos[0] - bg_padding, device_pos[1] - device_size[1] - bg_padding),
+                            (device_pos[0] + device_size[0] + bg_padding, device_pos[1] + bg_padding),
+                            (0, 0, 0), -1)
+                
+                # Draw text
+                cv2.putText(processed_frame, fps_text, fps_pos, font, font_scale, (255, 255, 255), thickness)
+                cv2.putText(processed_frame, device_text, device_pos, font, font_scale, (255, 255, 255), thickness)
                 
                 cv2.imshow('PPE Violation Detection', processed_frame)
                 
