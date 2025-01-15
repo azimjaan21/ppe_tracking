@@ -25,7 +25,7 @@ The project utilizes a substantial dataset with a total of **54,325 images** (JP
 - **Heads 🧑‍🏭**
 
 This dataset has been annotated to train and test the model’s ability to detect and classify PPE in a variety of industrial settings, ensuring that the system can generalize well across different scenarios.
-### Asking access to the DATASET :  azimjaan21@domain.com 📧
+### Asking access to the DATASET :  azimjaan21@gmail.com 📧
 
 
 ## 📌 Parameters:
@@ -77,5 +77,5 @@ Submit a pull request with a clear description of your changes 📝
 ## 📬 Contact
 For any inquiries related to this project or collaboration, feel free to reach out:
 
-Email: azimjaan21@domain.com 📧
+Email: azimjaan21@gmail.com 📧
 GitHub: azimjaan21 🧑‍💻
