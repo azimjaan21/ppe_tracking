@@ -31,9 +31,9 @@ This dataset has been annotated to train and test the model’s ability to detec
 
 ## 📌 Parameters:
 
-input_video_path: Path to the input video (CCTV footage) 🎥
+**input_video_path:** Path to the input video (CCTV footage) 🎥
 
-output_video_path: Path to save the output video with tracked objects 🎬
+**output_video_path:** Path to save the output video with tracked objects 🎬
 
 -----
 
@@ -84,4 +84,5 @@ Submit a pull request with a clear description of your changes 📝
 For any inquiries related to this project or collaboration, feel free to reach out:
 
 Email: azimjaan21@gmail.com 📧
+
 GitHub: azimjaan21 🧑‍💻
