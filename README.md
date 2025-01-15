@@ -13,9 +13,9 @@ This project contributes to the **Information Technology and Quality Engineering
 - **YOLOv8**: A state-of-the-art object detection model that has been customized for PPE detection tasks 🤖
 - **BotSORT**: A robust tracking algorithm used to track multiple objects in real-time, even in crowded environments in workplace🏭🚶‍♂️🚶‍♀️
 - **Custom Algorithms**: Proprietary algorithms have been developed to enhance the accuracy and performance of the system, ensuring that it runs **fast** and **efficiently** in real-time 🧠💨
-- **Python**: The core programming language used for the implementation and training model🐍.
-- **OpenCV**: Used for image processing and video streaming from CCTV cameras 🖥️.
-- **PyTorch**: Deep learning framework for model training and inference 🔥.
+- **Python**: The core programming language used for the implementation and training model🐍
+- **OpenCV**: Used for image processing and video streaming from CCTV cameras 🖥️
+- **PyTorch**: Deep learning framework for model training and inference 🔥
 
 ## 📦 Dataset ( by authors )
 
@@ -40,21 +40,23 @@ This dataset has been annotated to train and test the model’s ability to detec
 ## 📑 Academic Contributions
 This repository also serves as the basis for an academic research paper 📄 in the field of Information Technology and Quality Engineering (ITQE), addressing critical issues related to worker safety in manufacturing. The paper explores:
 
-The application of real-time computer vision for safety monitoring 🔍.
-The challenges and solutions related to tracking multiple objects (workers) across different environments ⚙️.
-The potential of AI-driven systems 🤖 to improve workplace safety and compliance ⚖️.
+- The application of real-time computer vision for safety monitoring 🔍
+
+- The challenges and solutions related to tracking multiple objects (workers) across different environments ⚙️
+  
+- The potential of AI-driven systems 🤖 to improve workplace safety and compliance ⚖️
 
 -----
 
 ## 🌟 Key Features
 
-- Real-Time Detection: Instantly identifies and tracks PPE usage in live CCTV streams ⏱️.
+- Real-Time Detection: Instantly identifies and tracks PPE usage in live CCTV streams ⏱️
 
-- Multiple Object Tracking: Handles tracking of multiple workers simultaneously using BotSORT 👷‍♂️👷‍♀️.
+- Multiple Object Tracking: Handles tracking of multiple workers simultaneously using BotSORT 👷‍♂️👷‍♀️
 
-- Custom Model & Algorithms: A tailored version of YOLOv8, optimized specifically for PPE detection and enhanced with proprietary algorithms for fast and high-accuracy real-time performance 🧠.
+- Custom Model & Algorithms: A tailored version of YOLOv8, optimized specifically for PPE detection and enhanced with proprietary algorithms for fast and high-accuracy real-time performance 🧠
 
-- Scalability: Suitable for large-scale deployment in industrial environments with multiple CCTV cameras 🏗️.
+- Scalability: Suitable for large-scale deployment in industrial environments with multiple CCTV cameras 🏗️
 
 ----
 
@@ -75,7 +77,7 @@ Seamlessly tracks multiple workers without losing accuracy or performance 🏃�
 ----
 
 ## 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details 📃.
+This project is licensed under the MIT License - see the LICENSE file for details 📃
 
 -----
 
