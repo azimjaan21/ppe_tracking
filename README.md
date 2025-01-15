@@ -27,11 +27,15 @@ The project utilizes a substantial dataset with a total of **54,325 images** (JP
 This dataset has been annotated to train and test the model’s ability to detect and classify PPE in a variety of industrial settings, ensuring that the system can generalize well across different scenarios.
 ### Asking access to the DATASET :  azimjaan21@gmail.com 📧
 
+-----
 
 ## 📌 Parameters:
 
-input_video_path: Path to the input video (CCTV footage) 🎥.
-output_video_path: Path to save the output video with tracked objects 🎬.
+input_video_path: Path to the input video (CCTV footage) 🎥
+
+output_video_path: Path to save the output video with tracked objects 🎬
+
+-----
 
 ## 📑 Academic Contributions
 This repository also serves as the basis for an academic research paper 📄 in the field of Information Technology and Quality Engineering (ITQE), addressing critical issues related to worker safety in manufacturing. The paper explores:
@@ -39,6 +43,8 @@ This repository also serves as the basis for an academic research paper 📄 in 
 The application of real-time computer vision for safety monitoring 🔍.
 The challenges and solutions related to tracking multiple objects (workers) across different environments ⚙️.
 The potential of AI-driven systems 🤖 to improve workplace safety and compliance ⚖️.
+
+-----
 
 ## 🌟 Key Features
 
