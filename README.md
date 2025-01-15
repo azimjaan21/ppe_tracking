@@ -2,22 +2,22 @@
 
 ## 📝 Project Overview
 
-This repository presents a solution for **Real-Time Personal Protective Equipment (PPE) Detection and Tracking** in manufacturing environments. The project leverages **CCTV cameras** 📹 to monitor workers and ensure safety compliance through the detection of essential PPE like helmets 🪖, vests 🦺, and headgear. By utilizing cutting-edge technologies like **YOLOv8** 🔥 and **BotSORT** 🧠, along with **custom-developed algorithms** 💡, this system is capable of accurately detecting and tracking multiple objects in dynamic environments with **high speed** ⚡ and **accuracy** 🎯.
+This repository presents a solution for **Real-Time Personal Protective Equipment (PPE) Detection and Tracking** in manufacturing environments. The project leverages **CCTV cameras** 📹 to monitor workers and ensure safety compliance through the detection of essential PPE like helmets ⛑️, vests 🦺, and head🧑‍🏭. By utilizing cutting-edge technologies like **YOLOv8** 🔥 and **BotSORT** 🧠, along with **custom-developed algorithms** 💡, this system is capable of accurately detecting and **tracking multiple workers' PPE statuses** in dynamic environments with **high speed** ⚡ and **accuracy** 🎯.
 
 ## 📚 Research Significance
 
-This project contributes to the **Information Technology and Quality Engineering (ITQE)** field by offering a scalable, real-time solution for industrial safety monitoring. With an extensive dataset of **54,325 annotated images** 📸 of helmets, vests, and heads, the model is designed to achieve **high accuracy** while ensuring that it works efficiently in real-time environments.
+This project contributes to the **Information Technology and Quality Engineering (ITQE)** field by offering a scalable, real-time solution for industrial safety monitoring. With an extensive dataset of **54,325 annotated images** 📸 of helmets, vests, and heads, the model is designed  by authors to achieve **high accuracy** while ensuring that it works efficiently in real-time environments.
 
 ## ⚙️ Technologies Used
 
-- **YOLOv8**: A state-of-the-art object detection model that has been customized for PPE detection tasks 🤖.
-- **BotSORT**: A robust tracking algorithm used to track multiple objects in real-time, even in crowded environments 🚶‍♂️🚶‍♀️.
-- **Custom Algorithms**: Proprietary algorithms have been developed to enhance the accuracy and performance of the system, ensuring that it runs **fast** and **efficiently** in real-time 🧠💨.
-- **Python**: The core programming language used for the implementation and training 🐍.
+- **YOLOv8**: A state-of-the-art object detection model that has been customized for PPE detection tasks 🤖
+- **BotSORT**: A robust tracking algorithm used to track multiple objects in real-time, even in crowded environments in workplace🏭🚶‍♂️🚶‍♀️
+- **Custom Algorithms**: Proprietary algorithms have been developed to enhance the accuracy and performance of the system, ensuring that it runs **fast** and **efficiently** in real-time 🧠💨
+- **Python**: The core programming language used for the implementation and training model🐍.
 - **OpenCV**: Used for image processing and video streaming from CCTV cameras 🖥️.
 - **PyTorch**: Deep learning framework for model training and inference 🔥.
 
-## 📦 Dataset
+## 📦 Dataset ( by authors )
 
 The project utilizes a substantial dataset with a total of **54,325 images** (JPG/PNG) containing various instances of:
 - **Helmets 🪖**
@@ -25,6 +25,7 @@ The project utilizes a substantial dataset with a total of **54,325 images** (JP
 - **Heads 🧑‍🏭**
 
 This dataset has been annotated to train and test the model’s ability to detect and classify PPE in a variety of industrial settings, ensuring that the system can generalize well across different scenarios.
+### Asking access to the DATASET :  azimjaan21@domain.com 📧
 
 
 ## 📌 Parameters:
