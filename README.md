@@ -20,7 +20,7 @@ This project contributes to the **Information Technology and Quality Engineering
 ## 📦 Dataset ( by authors )
 
 The project utilizes a substantial dataset with a total of **54,325 images** (JPG/PNG) containing various instances of:
-- **Helmets 🪖**
+- **Helmets 👷**
 - **Vests 🦺**
 - **Heads 🧑‍🏭**
 
