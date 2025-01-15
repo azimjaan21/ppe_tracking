@@ -62,10 +62,15 @@ The potential of AI-driven systems 🤖 to improve workplace safety and complian
 
 The system demonstrates strong performance in various industrial settings, including:
 
-Accurate PPE Detection: Precision in identifying helmets, vests, and heads, even in crowded or low-light conditions 🔍.
-Tracking Multiple Workers: Seamlessly tracks multiple workers without losing accuracy or performance 🏃‍♂️🏃‍♀️.
-Real-Time Monitoring: Provides continuous, real-time monitoring of worker safety ⚠️.
-High-Speed Processing: Optimized algorithms allow the system to run in real-time without lag or delay ⚡.
+### **Accurate PPE Detection:** 
+Precision in identifying helmets, vests, and heads, even in crowded or low-light conditions 🔍
+
+### **Tracking Multiple Workers:** 
+Seamlessly tracks multiple workers without losing accuracy or performance 🏃‍♂️🏃‍♀️
+
+### **Real-Time Monitoring:** 
+- Provides continuous, real-time monitoring of worker safety ⚠️
+- High-Speed Processing: Optimized algorithms allow the system to run in real-time without lag or delay ⚡
 
 ----
 
