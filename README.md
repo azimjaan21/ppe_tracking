@@ -1,4 +1,4 @@
-# 🚨 Real-Time PPE Detection and Tracking for Manufacturing Safety 🚨
+# 🚨👷 Real-Time PPE Detection and Tracking for Manufacturing Safety
 
 ## 📝 Project Overview
 
