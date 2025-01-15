@@ -93,4 +93,4 @@ For any inquiries related to this project or collaboration, feel free to reach o
 
 Email: azimjaan21@gmail.com 📧
 
-GitHub: azimjaan21 🧑‍💻
+GitHub: azimjaan21 👨🏻‍💻
