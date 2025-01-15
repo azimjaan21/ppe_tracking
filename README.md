@@ -2,7 +2,7 @@
 
 ## 📝 Project Overview
 
-This repository presents a solution for **Real-Time Personal Protective Equipment (PPE) Detection and Tracking** in manufacturing environments. The project leverages **CCTV cameras** 📹 to monitor workers and ensure safety compliance through the detection of essential PPE like helmets ⛑️, vests 🦺, and head🧑‍🏭. By utilizing cutting-edge technologies like **YOLOv8** 🔥 and **BotSORT** 🧠, along with **custom-developed algorithms** 💡, this system is capable of accurately detecting and **tracking multiple workers' PPE statuses** in dynamic environments with **high speed** ⚡ and **accuracy** 🎯.
+This repository presents a solution for **Real-Time Personal Protective Equipment (PPE) Detection and Tracking** in manufacturing environments. The project leverages **CCTV cameras** 📹 to monitor workers and ensure safety compliance through the detection of essential PPE like helmets 👷, vests 🦺, and head🧑‍🏭. By utilizing cutting-edge technologies like **YOLOv8** 🔥 and **BotSORT** 🧠, along with **custom-developed algorithms** 💡, this system is capable of accurately detecting and **tracking multiple workers' PPE statuses** in dynamic environments with **high speed** ⚡ and **accuracy** 🎯.
 
 ## 📚 Research Significance
 
