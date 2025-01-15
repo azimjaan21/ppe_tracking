@@ -48,10 +48,13 @@ The potential of AI-driven systems 🤖 to improve workplace safety and complian
 
 ## 🌟 Key Features
 
-Real-Time Detection: Instantly identifies and tracks PPE usage in live CCTV streams ⏱️.
-Multiple Object Tracking: Handles tracking of multiple workers simultaneously using BotSORT 👷‍♂️👷‍♀️.
-Custom Model & Algorithms: A tailored version of YOLOv8, optimized specifically for PPE detection and enhanced with proprietary algorithms for fast and high-accuracy real-time performance 🧠.
-Scalability: Suitable for large-scale deployment in industrial environments with multiple CCTV cameras 🏗️.
+- Real-Time Detection: Instantly identifies and tracks PPE usage in live CCTV streams ⏱️.
+
+- Multiple Object Tracking: Handles tracking of multiple workers simultaneously using BotSORT 👷‍♂️👷‍♀️.
+
+- Custom Model & Algorithms: A tailored version of YOLOv8, optimized specifically for PPE detection and enhanced with proprietary algorithms for fast and high-accuracy real-time performance 🧠.
+
+- Scalability: Suitable for large-scale deployment in industrial environments with multiple CCTV cameras 🏗️.
 
 ----
 
