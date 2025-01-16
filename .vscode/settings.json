@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./BoT-SORT/tracker/bot_",
+        "./BoT-SORT/tracker/bot_",
+        "./BoT-SORT/tracker/mc_bot_"
+    ]
+}

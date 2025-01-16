@@ -11,7 +11,7 @@ class PPEViolationTracker:
                  ppe_model_path: str = 'ppe.pt',
                  person_model_path: str = 'yolov8m.pt',
                  violation_threshold: float = 5.0,  #seconds
-                 confidence: float = 0.5, #conf classes
+                 confidence: float = 0.1, #conf classes
                  track_history_length: int = 50):  # Length of tracking path
         """Initialize dual-model tracking system with enhanced visualization"""
         self.ppe_model = YOLO(ppe_model_path).to('cuda')
