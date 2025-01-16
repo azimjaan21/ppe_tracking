@@ -11,7 +11,7 @@ class PPEViolationTracker:
                  ppe_model_path: str = 'ppe.pt',
                  person_model_path: str = 'yolov8m.pt',
                  violation_threshold: float = 5.0,  #seconds
-                 confidence: float = 0.49, #conf classes
+                 confidence: float = 0.5, #conf classes
                  track_history_length: int = 50):  # Length of tracking path
         """Initialize dual-model tracking system with enhanced visualization"""
         self.ppe_model = YOLO(ppe_model_path).to('cuda')
@@ -355,4 +355,35 @@ class PPEViolationTracker:
                 cap.release()
             if 'out' in locals():
                 out.release()
+            cv2.destroyAllWindows()
+
+    def run_on_image(self, image_path: str, output_path: str = None):
+        """Run PPE violation detection on a single image"""
+        try:
+            # Read the input image
+            image = cv2.imread(image_path)
+            if image is None:
+                raise ValueError(f"Failed to read image from path: {image_path}")
+
+            # Process the image
+            processed_image, violation_status = self.process_frame(image)
+
+            # Print violation alerts
+            for worker_id, is_violating in violation_status.items():
+                if is_violating:
+                    duration = self.violation_tracks[worker_id]['duration']
+                    print(f"ALERT: Worker {worker_id} has no helmet for {duration:.1f} seconds!")
+
+            # Save or display the image
+            if output_path:
+                cv2.imwrite(output_path, processed_image)
+                print(f"Processed image saved to: {output_path}")
+            else:
+                cv2.imshow('PPE Violation Detection', processed_image)
+                cv2.waitKey(0)
+
+        except Exception as e:
+            print(f"Error processing image: {str(e)}")
+
+        finally:
             cv2.destroyAllWindows()
