@@ -66,7 +66,7 @@ class PPEViolationTracker:
         x2, y1 = int(x + w / 2), int(y - h / 2)
 
         offset = 10
-        icon_size = 30  # Icon size (width and height in pixels)
+        icon_size = 33  # Icon size (width and height in pixels)
         icon_gap = 5
         current_x = x2 + offset
 
