@@ -158,7 +158,7 @@ class PPEViolationTracker:
         track_info['track_history'].append(person_center)
         
         # Handle timing logic
-        if track_info['status_change_time'] is None or current_time - track_info['status_change_time'] >= 5.0:
+        if track_info['status_change_time'] is None or current_time - track_info['status_change_time'] >= 8.0:
             if has_violation:
                 if track_info['start_time'] is None:
                     track_info['start_time'] = current_time
@@ -338,6 +338,7 @@ class PPEViolationTracker:
                 # Draw text
                 cv2.putText(processed_frame, fps_text, fps_pos, font, font_scale, (255, 255, 255), thickness)
                 cv2.putText(processed_frame, device_text, device_pos, font, font_scale, (255, 255, 255), thickness)
+                
                 
                 cv2.imshow('PPE Violation Detection', processed_frame)
                 

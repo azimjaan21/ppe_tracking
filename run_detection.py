@@ -13,13 +13,13 @@ def main():
     # # For Vide output
     # detector.run_on_video('frame.png', 'output/frame.png')
 
-     # Process a single image
-    input_image_path = "this.jpg"      # Path to your input image
-    output_image_path = "output/this.jpg"   # Path to save the processed image
-    detector.run_on_image(input_image_path, output_image_path)
+    #  # Process a single image
+    # input_image_path = "this.jpg"      # Path to your input image
+    # output_image_path = "output/this.jpg"   # Path to save the processed image
+    # detector.run_on_image(input_image_path, output_image_path)
     
     # For WebCam
-    # detector.run_on_video(0)
+    detector.run_on_video(0)
 
 if __name__ == "__main__":
     main()
