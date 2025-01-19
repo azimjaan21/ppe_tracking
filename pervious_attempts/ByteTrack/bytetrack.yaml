@@ -1,0 +1,11 @@
+track_high_thresh: 0.7
+track_low_thresh: 0.05
+new_track_thresh: 0.7
+high_match_thresh: 0.75
+low_match_thresh: 0.4
+match_thresh: 0.7
+lost_track_thresh: 30
+enable_reid: True                 # Enable ReID
+reid_model: "osnet_x0_5"          # Use osnet_x0_5 for speed and accuracy
+reid_weights: "reid_weights.pth"  # Path to the downloaded weights
+device: "cuda"

@@ -1,0 +1,7 @@
+max_age: 30  # Maximum age for tracks before they are removed
+min_hits: 3  # Minimum number of hits for a track to be considered valid
+iou_threshold: 0.3  # IOU threshold for matching detections to tracks
+
+reid:
+  model: 'osnet_x0_5_imagenet.pth'  # Re-ID model (OSNet model)
+  confidence_threshold: 0.6  # Confidence threshold for Re-ID matching

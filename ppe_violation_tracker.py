@@ -247,9 +247,6 @@ class PPEViolationTracker:
             return frame, violation_status
     
     ##video running process webcam
-    import cv2
-    import torch
-    import time
     from typing import Tuple, Dict
 
     def run_on_video(self, source: str, output_path: str = None):
