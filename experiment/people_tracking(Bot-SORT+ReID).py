@@ -14,7 +14,7 @@ def generate_color(track_id):
 
 # Initialize ReID model
 def initialize_reid_model():
-    model = models.build_model(name='osnet_x1_0', num_classes=1000, pretrained=True)
+    model = models.build_model(name='osnet_x0_5', num_classes=1000, pretrained=True)
     model.eval().cuda()
     return model
 
@@ -42,6 +42,14 @@ transform = transforms.Compose([
 cap = cv2.VideoCapture('people.mp4')
 cv2.namedWindow("Tracking", cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+# Get video properties for saving output
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+# Initialize VideoWriter for saving output
+output_writer = cv2.VideoWriter('output_tracking.avi', cv2.VideoWriter_fourcc(*'XVID'), fps, (frame_width, frame_height))
 
 # Tracking variables
 tracks = {}
@@ -134,6 +142,8 @@ while True:
     cv2.putText(frame, approach_text2, (x_center + text1_size[0] + 5, 30), 
                 cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
 
+    # Write the frame to the output video
+    output_writer.write(frame)
 
     # Show the frame
     cv2.imshow("Tracking", frame)
@@ -144,4 +154,5 @@ while True:
 
 # Release resources
 cap.release()
+output_writer.release()
 cv2.destroyAllWindows()

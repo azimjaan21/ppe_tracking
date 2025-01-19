@@ -18,6 +18,16 @@ device_name = torch.cuda.get_device_name(0)
 # Open video capture (use your camera or video file)
 cap = cv2.VideoCapture('people.mp4')  # 0 for the default webcam, or replace with video file path
 
+# Get video properties for saving output
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps_input = int(cap.get(cv2.CAP_PROP_FPS))
+
+# Define VideoWriter for saving output
+output_file = 'output_video.mp4'
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for MP4
+out = cv2.VideoWriter(output_file, fourcc, fps_input, (frame_width, frame_height))
+
 # Create a named window for full screen
 cv2.namedWindow("Tracking", cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
@@ -70,21 +80,17 @@ while True:
     fps_pos = (10, fps_size[1] + 10)
     device_pos = (10, fps_pos[1] + device_size[1] + 5)
 
-    cv2.rectangle(frame,
-                  (fps_pos[0] - bg_padding, fps_pos[1] - fps_size[1] - bg_padding),
-                  (fps_pos[0] + fps_size[0] + bg_padding, fps_pos[1] + bg_padding),
-                  (0, 0, 0), -1)
-    cv2.rectangle(frame,
-                  (device_pos[0] - bg_padding, device_pos[1] - device_size[1] - bg_padding),
-                  (device_pos[0] + device_size[0] + bg_padding, device_pos[1] + bg_padding),
-                  (0, 0, 0), -1)
-
-    cv2.putText(frame, fps_text, fps_pos, font, font_scale, (255, 255, 0), thickness)
-    cv2.putText(frame, device_text, device_pos, font, font_scale, (255, 0, 255), thickness)
+    # cv2.rectangle(frame,
+    #               (fps_pos[0] - bg_padding, fps_pos[1] - fps_size[1] - bg_padding),
+    #               (fps_pos[0] + fps_size[0] + bg_padding, fps_pos[1] + bg_padding),
+    #               (0, 0, 0), -1)
+    # cv2.rectangle(frame,
+    #               (device_pos[0] - bg_padding, device_pos[1] - device_size[1] - bg_padding),
+    #               (device_pos[0] + device_size[0] + bg_padding, device_pos[1] + bg_padding),
+    #               (0, 0, 0), -1)
 
     # Display approach
     approach_text = f"Bot-SORT (default)"
- # Calculate size of each text part
     text1_size = cv2.getTextSize(approach_text, cv2.FONT_HERSHEY_SIMPLEX, 1.2, 2)[0]
 
     # Calculate total width and position for top center alignment
@@ -93,7 +99,11 @@ while True:
 
     # For Bot-SORT (blue color)
     cv2.putText(frame, approach_text, (x_center, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 0), 2)
-        # Display the result
+
+    # Write the frame to the output video
+    out.write(frame)
+
+    # Display the result
     cv2.imshow("Tracking", frame)
 
     # Break the loop on pressing 'q'
@@ -102,4 +112,5 @@ while True:
 
 # Release resources
 cap.release()
+out.release()  # Save the video file
 cv2.destroyAllWindows()
