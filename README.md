@@ -1,6 +1,5 @@
 # 🚨👷 Real-Time PPE Detection and Tracking for Manufacturing Safety
-
-![this](https://github.com/user-attachments/assets/3d9d09d4-2128-4b79-aec8-5860cdd31861)
+![image](https://github.com/user-attachments/assets/0eb9c939-995c-4888-83df-0e6a4ee0697c)
 
 
 ## 📝 Project Overview
