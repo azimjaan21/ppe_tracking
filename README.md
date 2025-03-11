@@ -66,6 +66,19 @@ This repository also serves as the basis for an academic research paper 📄 in 
 
 ![ezgif com-video-to-gif-converter+(12)+(1)+(1)+(1)](https://github.com/user-attachments/assets/ad965db3-1bd0-43b1-bcc8-f0e5d6f1ab2f)
 
+
+## 🌟 Qualitative Results (Modern Design)
+
+![image](https://github.com/user-attachments/assets/e8e1a3a3-87da-4b3b-9b79-7fe349f85115)
+![image](https://github.com/user-attachments/assets/ea8e229d-56f3-4140-8e3f-b49231eaf50f)
+![image](https://github.com/user-attachments/assets/9915fcce-ef55-400b-b073-25fd7699f398)
+
+
+## FPS TEST
+
+![image](https://github.com/user-attachments/assets/cc573611-d3d4-403b-a996-63bd2bd7b8fe)
+
+
 ### **Real-Time Monitoring:** 
 - Provides continuous, real-time monitoring of worker safety ⚠️
 - Seamlessly tracks multiple workers without losing accuracy or performance 🏃‍♂️🏃‍♀️
