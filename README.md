@@ -1,5 +1,8 @@
 # 🚨👷 Real-Time PPE Detection and Tracking for Manufacturing Safety
 
+![this](https://github.com/user-attachments/assets/3d9d09d4-2128-4b79-aec8-5860cdd31861)
+
+
 ## 📝 Project Overview
 
 This repository presents a solution for **Real-Time Personal Protective Equipment (PPE) Detection and Tracking** in manufacturing environments. The project leverages **CCTV cameras** 📹 to monitor workers and ensure safety compliance through the detection of essential PPE like helmets 👷, vests 🦺, and head🧑‍🏭. By utilizing cutting-edge technologies like **YOLOv8** 🔥 and **BotSORT** 🧠, along with **custom-developed algorithms** 💡, this system is capable of accurately detecting and **tracking multiple workers' PPE statuses** in dynamic environments with **high speed** ⚡ and **accuracy** 🎯.
@@ -60,18 +63,13 @@ This repository also serves as the basis for an academic research paper 📄 in 
 
 ----
 
-## 🏆 Qualitative Results
+## 🏆 DEMO 
 
-The system demonstrates strong performance in various industrial settings, including:
-
-### **Accurate PPE Detection:** 
-Precision in identifying helmets, vests, and heads, even in crowded or low-light conditions 🔍
-
-### **Tracking Multiple Workers:** 
-Seamlessly tracks multiple workers without losing accuracy or performance 🏃‍♂️🏃‍♀️
+![ezgif com-video-to-gif-converter+(12)+(1)+(1)+(1)](https://github.com/user-attachments/assets/ad965db3-1bd0-43b1-bcc8-f0e5d6f1ab2f)
 
 ### **Real-Time Monitoring:** 
 - Provides continuous, real-time monitoring of worker safety ⚠️
+- Seamlessly tracks multiple workers without losing accuracy or performance 🏃‍♂️🏃‍♀️
 - High-Speed Processing: Optimized algorithms allow the system to run in real-time without lag or delay ⚡
 
 ----
