@@ -8,10 +8,10 @@ import time
 
 class PPEViolationTracker:
     def __init__(self, 
-                 ppe_model_path: str = 'ppe.pt',
                  person_model_path: str = 'yolov8m.pt',
+                 ppe_model_path: str = 'ppe.pt',
                  violation_threshold: float = 5.0,  #seconds
-                 confidence: float = 0.1, #conf classes
+                 confidence: float = 0.4, #conf classes
                  track_history_length: int = 50):  # Length of tracking path
         """Initialize dual-model tracking system with enhanced visualization"""
         self.ppe_model = YOLO(ppe_model_path).to('cuda')
@@ -158,7 +158,7 @@ class PPEViolationTracker:
         track_info['track_history'].append(person_center)
         
         # Handle timing logic
-        if track_info['status_change_time'] is None or current_time - track_info['status_change_time'] >= 8.0:
+        if track_info['status_change_time'] is None or current_time - track_info['status_change_time'] >= 5:
             if has_violation:
                 if track_info['start_time'] is None:
                     track_info['start_time'] = current_time
@@ -198,7 +198,8 @@ class PPEViolationTracker:
             """Process a single frame and detect PPE violations."""
             current_time = time.time()
             violation_status = {}
-
+            violation_data = {}  # Store detailed violation information
+            
             try:
                 # First, detect and track persons
                 person_results = self.person_model.track(frame, persist=True, conf=self.confidence)[0]
@@ -222,6 +223,14 @@ class PPEViolationTracker:
                             is_violating = self._update_violation_status(
                                 track_id, has_violation, current_time, person_center)
                             violation_status[track_id] = is_violating
+
+                              # If violating, store detailed information
+                            if is_violating:
+                                violation_data[track_id] = {
+                                    "box": box.tolist(),
+                                    "ppe_detections": ppe_detections,
+                                    "timestamp": current_time
+                                }
                             
                             # Draw person corners and icons
                             color = (0, 0, 255) if is_violating else (0, 255, 0)
@@ -233,13 +242,7 @@ class PPEViolationTracker:
 
                             # Draw tracking path
                             self._draw_tracking_path(frame, track_id, (0, 255, 255))
-
-                # Draw detection info
-                num_workers = len(violation_status)
-                num_violations = sum(violation_status.values())
-                cv2.putText(frame, f"Workers: {num_workers}, Violations: {num_violations}",
-                        (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
-
+             
                         
             except Exception as e:
                 print(f"Error processing frame: {str(e)}")
@@ -332,9 +335,9 @@ class PPEViolationTracker:
                             (device_pos[0] + device_size[0] + bg_padding, device_pos[1] + bg_padding),
                             (0, 0, 0), -1)
                 
-                # Draw text
-                cv2.putText(processed_frame, fps_text, fps_pos, font, font_scale, (255, 255, 255), thickness)
-                cv2.putText(processed_frame, device_text, device_pos, font, font_scale, (255, 255, 255), thickness)
+                # # Draw text
+                # cv2.putText(processed_frame, fps_text, fps_pos, font, font_scale, (255, 255, 255), thickness)
+                # cv2.putText(processed_frame, device_text, device_pos, font, font_scale, (255, 255, 255), thickness)
                 
                 
                 cv2.imshow('PPE Violation Detection', processed_frame)

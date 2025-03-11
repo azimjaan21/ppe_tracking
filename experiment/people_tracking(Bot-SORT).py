@@ -16,7 +16,7 @@ model.cuda()  # Move the model to CUDA (GPU)
 device_name = torch.cuda.get_device_name(0)
 
 # Open video capture (use your camera or video file)
-cap = cv2.VideoCapture('people.mp4')  # 0 for the default webcam, or replace with video file path
+cap = cv2.VideoCapture('shopping.mp4')  # 0 for the default webcam, or replace with video file path
 
 # Get video properties for saving output
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))

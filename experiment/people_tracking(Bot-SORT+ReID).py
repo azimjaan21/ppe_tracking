@@ -29,7 +29,7 @@ def extract_embedding(frame, box, model, transform):
     return embedding
 
 # Initialize YOLOv8 and ReID model
-yolo_model = YOLO('yolov8m.pt').cuda()
+yolo_model = YOLO('yolo11s-pose.pt')
 reid_model = initialize_reid_model()
 
 # Preprocessing for ReID
@@ -39,7 +39,7 @@ transform = transforms.Compose([
 ])
 
 # Video capture and full-screen display
-cap = cv2.VideoCapture('people.mp4')
+cap = cv2.VideoCapture(0)
 cv2.namedWindow("Tracking", cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
@@ -49,7 +49,7 @@ frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = int(cap.get(cv2.CAP_PROP_FPS))
 
 # Initialize VideoWriter for saving output
-output_writer = cv2.VideoWriter('output_tracking.avi', cv2.VideoWriter_fourcc(*'XVID'), fps, (frame_width, frame_height))
+output_writer = cv2.VideoWriter('out_shopping.mp4', cv2.VideoWriter_fourcc(*'XVID'), fps, (frame_width, frame_height))
 
 # Tracking variables
 tracks = {}
@@ -85,7 +85,7 @@ while True:
             existing_embeddings = np.vstack([tracks[tid]['embedding'] for tid in track_ids])
             distances = cdist(new_embedding, existing_embeddings, metric='cosine')
             min_distance_idx = np.argmin(distances)
-            if distances[0][min_distance_idx] < 0.4:  # Adjust threshold as needed
+            if distances[0][min_distance_idx] < 0.5:  # Adjust threshold as needed
                 matched_id = track_ids[min_distance_idx]
 
         # Assign new ID if no match found
